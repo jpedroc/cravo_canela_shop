@@ -1,0 +1,51 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet id="1" author="Joao Pedro Calixto">
+        <createTable tableName="PRODUTO">
+            <column name="ID" type="bigint" remarks="Id do usuario" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="PRODUTO_PK" nullable="false"/>
+            </column>
+            <column name="NOME_PRODUTO" type="varchar(100)" remarks="Nome do produto" >
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRICAO" type="varchar(500)" remarks="Descricao do produto" >
+                <constraints nullable="false"/>
+            </column>
+            <column name="VALOR" type="double" remarks="Valor do produto" >
+                <constraints nullable="false"/>
+            </column>
+            <column name="QUANTIDADE_ESTOQUE" type="bigint" remarks="Quantidade do produto em estoque">
+                <constraints nullable="false"/>
+            </column>
+            <column name="STATUS" type="boolean" remarks="Informa se o produto está ativo ou não">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="Joao Pedro Calixto">
+        <createTable tableName="IMAGEM_PRODUTO">
+            <column name="ID" type="bigint" remarks="Id da imagem" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="IMAGEM_PK" nullable="false"/>
+            </column>
+            <column name="IMAGEM" type="blob" remarks="Imagem">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ID_PRODUTO" type="bigint" remarks="Id do produto">
+                <constraints nullable="false"></constraints>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="3" author="Joao Pedro Calixto">
+        <addForeignKeyConstraint
+                baseTableName="IMAGEM_PRODUTO"
+                baseColumnNames="ID_PRODUTO"
+                constraintName="FK_PRODUTO"
+                referencedTableName="PRODUTO"
+                referencedColumnNames="ID"/>
+    </changeSet>
+</databaseChangeLog>
