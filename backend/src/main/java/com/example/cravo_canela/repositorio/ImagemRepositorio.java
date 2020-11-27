@@ -1,6 +1,6 @@
-package com.example.CravoCanela.repositorio;
+package com.example.cravo_canela.repositorio;
 
-import com.example.CravoCanela.dominio.Imagem;
+import com.example.cravo_canela.dominio.Imagem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

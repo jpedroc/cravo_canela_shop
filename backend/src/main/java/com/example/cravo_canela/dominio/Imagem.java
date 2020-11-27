@@ -1,4 +1,4 @@
-package com.example.CravoCanela.dominio;
+package com.example.cravo_canela.dominio;
 
 
 import lombok.Getter;
@@ -6,8 +6,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
+//@Getter
+//@Setter
 @Entity
 @Table(name = "IMAGEM_PRODUTO")
 public class Imagem {
@@ -21,4 +21,19 @@ public class Imagem {
     @Lob
     private byte[] imagem;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public byte[] getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(byte[] imagem) {
+        this.imagem = imagem;
+    }
 }
