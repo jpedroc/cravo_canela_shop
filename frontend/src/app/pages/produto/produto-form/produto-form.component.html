@@ -1,0 +1,32 @@
+<div>
+    <span>Nome Produto</span>
+    <input type="text" [(ngModel)]="produto.nomeProduto">
+</div>
+<div>
+    <span>Descricao Produto</span>
+    <textarea rows="3" [(ngModel)]="produto.descricaoProduto"></textarea>
+</div>
+<div>
+    <span>Valor Produto R$</span>
+    <input type="number" [(ngModel)]="produto.valorProduto">
+</div>
+<div>
+    <span>Quantidade Estoque</span>
+    <input type="number" [(ngModel)]="produto.quantidadeEstoque">
+</div>
+<div>
+    <span>Imagem Destaque</span>
+    <input type="file" accept="image/png, image/jpeg" (change)="setImagemDestaque($event)"><br>
+    <img [src]="produto.imagemDestaque.url" height="200">
+</div>
+<div>
+    <span>Imagens</span>
+    <button (click)="novaImagem()">Adicionar Imagem</button>
+    <li *ngFor="let img of produto.listaImagem; index as index">
+        <input type="file" accept="image/png, image/jpeg" (change)="setImagem($event, index)">
+        <img [src]="img.url" height="200">
+    </li>
+
+</div>
+
+<button (click)="salvar()">Enviar</button>
