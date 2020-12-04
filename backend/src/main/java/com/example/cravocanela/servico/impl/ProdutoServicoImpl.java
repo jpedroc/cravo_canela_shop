@@ -39,6 +39,7 @@ public class ProdutoServicoImpl implements ProdutoServico {
             throw new RegraNegocioException("Lista de imagens vazias");
         }
 
+
         return produtoRepositorio.save(produto);
     }
 

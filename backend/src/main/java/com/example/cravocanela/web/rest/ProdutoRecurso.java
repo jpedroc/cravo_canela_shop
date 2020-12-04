@@ -28,8 +28,4 @@ public class ProdutoRecurso {
         return ResponseEntity.ok().body(produto);
     }
 
-//    @GetMapping
-//    public ResponseEntity<List<ProdutoDTO>> listarAtivos() {
-//
-//    }
 }
