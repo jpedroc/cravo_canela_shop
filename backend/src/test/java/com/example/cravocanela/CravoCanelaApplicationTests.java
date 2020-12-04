@@ -1,4 +1,4 @@
-package com.example.cravo_canela;
+package com.example.cravocanela;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

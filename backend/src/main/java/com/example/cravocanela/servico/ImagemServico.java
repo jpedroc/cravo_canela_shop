@@ -1,6 +1,6 @@
-package com.example.cravo_canela.servico;
+package com.example.cravocanela.servico;
 
-import com.example.cravo_canela.dominio.Imagem;
+import com.example.cravocanela.dominio.Imagem;
 
 public interface ImagemServico {
 

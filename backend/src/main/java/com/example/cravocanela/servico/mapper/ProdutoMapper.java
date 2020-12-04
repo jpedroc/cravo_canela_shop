@@ -1,16 +1,16 @@
-package com.example.cravo_canela.servico.mapper;
+package com.example.cravocanela.servico.mapper;
 
-import com.example.cravo_canela.dominio.Produto;
-import com.example.cravo_canela.servico.dto.ProdutoDTO;
+import com.example.cravocanela.dominio.Produto;
+import com.example.cravocanela.servico.dto.ProdutoDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {})
 public interface ProdutoMapper extends EntityMapper<ProdutoDTO, Produto> {
 
     @Override
     @Mapping(target = "nome", source = "nomeProduto")
     @Mapping(target = "valor", source = "valorProduto")
-    @Mapping(target = "imagemDestaque", source = "listaImagens.get(0)", )
+    @Mapping(target = "imagemDestaque", source = "imagemDestaque")
     ProdutoDTO toDto(Produto entity);
 }

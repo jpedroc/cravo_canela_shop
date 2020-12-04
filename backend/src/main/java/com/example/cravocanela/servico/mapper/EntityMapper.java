@@ -1,4 +1,4 @@
-package com.example.cravo_canela.servico.mapper;
+package com.example.cravocanela.servico.mapper;
 
 import java.util.List;
 

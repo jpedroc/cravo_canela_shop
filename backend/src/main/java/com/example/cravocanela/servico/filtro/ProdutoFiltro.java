@@ -1,10 +1,9 @@
-package com.example.cravo_canela.servico.filtro;
+package com.example.cravocanela.servico.filtro;
 
+import com.example.cravocanela.dominio.Produto;
 import lombok.Getter;
 import lombok.Setter;
 
-import org.apache.commons.lang3.ObjectUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.jpa.domain.Specification;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -20,6 +19,7 @@ public class ProdutoFiltro implements EntityFiltro {
     private Long id;
     private String nome;
     private Double valor;
+    private Boolean status;
 
     @Override
     public Specification filter() {

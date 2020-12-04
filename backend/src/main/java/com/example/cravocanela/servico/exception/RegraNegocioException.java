@@ -1,4 +1,4 @@
-package com.example.cravo_canela.servico.exception;
+package com.example.cravocanela.servico.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

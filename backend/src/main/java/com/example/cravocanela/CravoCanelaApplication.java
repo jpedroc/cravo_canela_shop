@@ -1,4 +1,4 @@
-package com.example.cravo_canela;
+package com.example.cravocanela;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,13 +1,16 @@
-package com.example.cravo_canela.servico.impl;
+package com.example.cravocanela.servico.impl;
 
 
-import com.example.cravo_canela.dominio.Produto;
-import com.example.cravo_canela.repositorio.ProdutoRepositorio;
-import com.example.cravo_canela.servico.ProdutoServico;
-import com.example.cravo_canela.servico.dto.ProdutoDTO;
-import com.example.cravo_canela.servico.exception.RegraNegocioException;
-import com.example.cravo_canela.servico.mapper.ProdutoMapper;
+import com.example.cravocanela.dominio.Produto;
+import com.example.cravocanela.repositorio.ProdutoRepositorio;
+import com.example.cravocanela.servico.ProdutoServico;
+import com.example.cravocanela.servico.dto.ProdutoDTO;
+import com.example.cravocanela.servico.exception.RegraNegocioException;
+import com.example.cravocanela.servico.filtro.ProdutoFiltro;
+import com.example.cravocanela.servico.mapper.ProdutoMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -23,10 +26,11 @@ public class ProdutoServicoImpl implements ProdutoServico {
     private final ProdutoMapper produtoMapper;
 
     @Override
-    public List<ProdutoDTO> listar() {
-        List<Produto> listaProdutos = produtoRepositorio.findByStatus(1).orElse(new ArrayList<Produto>());
+    public Page<ProdutoDTO> listar(ProdutoFiltro produtoFiltro, Pageable pageable) {
+        produtoFiltro.setStatus(true);
+        Page<Produto> listaProdutos = produtoRepositorio.findAll(produtoFiltro.filter(), pageable);
 
-        return produtoMapper.toDto(listaProdutos);
+        return listaProdutos.map(produtoMapper::toDto);
     }
 
     @Override

@@ -1,9 +1,9 @@
-package com.example.cravo_canela.servico.impl;
+package com.example.cravocanela.servico.impl;
 
-import com.example.cravo_canela.dominio.Imagem;
-import com.example.cravo_canela.repositorio.ImagemRepositorio;
-import com.example.cravo_canela.servico.ImagemServico;
-import com.example.cravo_canela.servico.exception.RegraNegocioException;
+import com.example.cravocanela.dominio.Imagem;
+import com.example.cravocanela.repositorio.ImagemRepositorio;
+import com.example.cravocanela.servico.ImagemServico;
+import com.example.cravocanela.servico.exception.RegraNegocioException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

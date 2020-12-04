@@ -1,8 +1,7 @@
-package com.example.cravo_canela.web.rest;
+package com.example.cravocanela.web.rest;
 
-import com.example.cravo_canela.dominio.Produto;
-import com.example.cravo_canela.servico.ProdutoServico;
-import com.example.cravo_canela.servico.dto.ProdutoDTO;
+import com.example.cravocanela.dominio.Produto;
+import com.example.cravocanela.servico.ProdutoServico;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/produtos")

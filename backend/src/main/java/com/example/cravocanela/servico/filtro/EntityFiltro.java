@@ -1,4 +1,4 @@
-package com.example.cravo_canela.servico.filtro;
+package com.example.cravocanela.servico.filtro;
 
 import org.springframework.data.jpa.domain.Specification;
 
