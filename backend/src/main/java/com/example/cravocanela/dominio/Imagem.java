@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Blob;
 
 @Getter
 @Setter
@@ -24,6 +23,10 @@ public class Imagem {
 
     @Column(name = "IMAGEM", nullable = false)
     @Lob
-    private Blob imagem;
+    private byte[] imagem;
+
+    @ManyToOne
+    @JoinColumn(name = "ID_PRODUTO")
+    private Produto produto;
 
 }

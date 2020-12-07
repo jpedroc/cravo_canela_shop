@@ -34,7 +34,7 @@
             <column name="ID" type="bigint" remarks="Id da imagem" autoIncrement="true">
                 <constraints primaryKey="true" primaryKeyName="IMAGEM_PK" nullable="false"/>
             </column>
-            <column name="IMAGEM" type="blob" remarks="Imagem">
+            <column name="IMAGEM" type="binary" remarks="Imagem">
                 <constraints nullable="false"/>
             </column>
             <column name="ID_PRODUTO" type="bigint" remarks="Id do produto">

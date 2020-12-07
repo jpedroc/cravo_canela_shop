@@ -17,7 +17,7 @@ public class ProdutoRecurso {
     private final ProdutoServico produtoServico;
 
     @PostMapping
-    public ResponseEntity<Produto> cadastrar(@Valid @RequestBody Produto produto) throws URISyntaxException {
+    public ResponseEntity<Produto> cadastrar(@RequestBody Produto produto) throws URISyntaxException {
         Produto produtoSalvo = produtoServico.salvar(produto);
         return ResponseEntity.created(new URI("/produtos/" + produto.getId())).body(produto);
     }

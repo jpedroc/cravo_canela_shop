@@ -26,12 +26,10 @@ public class Produto {
     @Column(name = "VALOR", nullable = false)
     private Double valorProduto;
 
-    @OneToMany
-    @JoinColumn(name = "ID_PRODUTO")
+    @OneToMany(mappedBy = "produto")
     private List<Imagem> listaImagens;
 
-    @OneToOne
-    @JoinColumn(name= "ID_PRODUTO", nullable = false)
+    @OneToOne(mappedBy = "produto")
     private Imagem imagemDestaque;
 
     @Column(name = "QUANTIDADE_ESTOQUE", nullable = false)
