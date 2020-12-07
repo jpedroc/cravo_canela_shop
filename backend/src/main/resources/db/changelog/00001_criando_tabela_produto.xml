@@ -17,9 +17,6 @@
             <column name="VALOR" type="double" remarks="Valor do produto" >
                 <constraints nullable="false"/>
             </column>
-            <column name="ID_IMAGEM_DESTAQUE" type="bigint" remarks="Imagem principal do produto">
-                <constraints nullable="false"></constraints>
-            </column>
             <column name="QUANTIDADE_ESTOQUE" type="bigint" remarks="Quantidade do produto em estoque">
                 <constraints nullable="false"/>
             </column>
@@ -37,6 +34,9 @@
             <column name="IMAGEM" type="binary" remarks="Imagem">
                 <constraints nullable="false"/>
             </column>
+            <column name="DESTAQUE" type="boolean" remarks="Se a imagem é destaque ou não">
+                <constraints nullable="false"/>
+            </column>
             <column name="ID_PRODUTO" type="bigint" remarks="Id do produto">
                 <constraints nullable="false"></constraints>
             </column>
@@ -52,12 +52,4 @@
                 referencedColumnNames="ID"/>
     </changeSet>
 
-    <changeSet id="4" author="Joao Pedro Calixto">
-        <addForeignKeyConstraint
-                baseTableName="PRODUTO"
-                baseColumnNames="ID_IMAGEM_DESTAQUE"
-                constraintName="FK_IMAGEM_DESTAQUE"
-                referencedTableName="IMAGEM_PRODUTO"
-                referencedColumnNames="ID"/>
-    </changeSet>
 </databaseChangeLog>

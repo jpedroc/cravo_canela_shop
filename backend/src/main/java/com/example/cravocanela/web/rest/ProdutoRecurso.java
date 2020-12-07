@@ -17,15 +17,16 @@ public class ProdutoRecurso {
     private final ProdutoServico produtoServico;
 
     @PostMapping
-    public ResponseEntity<Produto> cadastrar(@RequestBody Produto produto) throws URISyntaxException {
+    public ResponseEntity<Produto> cadastrar(@Valid @RequestBody Produto produto) throws URISyntaxException {
         Produto produtoSalvo = produtoServico.salvar(produto);
-        return ResponseEntity.created(new URI("/produtos/" + produto.getId())).body(produto);
+        return ResponseEntity.created(new URI("/produtos/" + produtoSalvo.getId())).body(produtoSalvo);
     }
+
 
     @PutMapping
     public ResponseEntity<Produto> editar(@Valid @RequestBody Produto produto) {
         Produto produtoEditado = produtoServico.salvar(produto);
-        return ResponseEntity.ok().body(produto);
+        return ResponseEntity.ok().body(produtoEditado);
     }
 
 }

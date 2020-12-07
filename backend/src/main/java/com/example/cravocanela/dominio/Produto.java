@@ -29,9 +29,6 @@ public class Produto {
     @OneToMany(mappedBy = "produto")
     private List<Imagem> listaImagens;
 
-    @OneToOne(mappedBy = "produto")
-    private Imagem imagemDestaque;
-
     @Column(name = "QUANTIDADE_ESTOQUE", nullable = false)
     private Long quantidadeEstoque;
 

@@ -5,14 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
 @Getter
 @Setter
 @Entity
-@Data
-@Builder
 @Table(name = "IMAGEM_PRODUTO")
 public class Imagem {
 
@@ -23,10 +22,14 @@ public class Imagem {
 
     @Column(name = "IMAGEM", nullable = false)
     @Lob
+    @Type(type="org.hibernate.type.BinaryType")
     private byte[] imagem;
 
     @ManyToOne
     @JoinColumn(name = "ID_PRODUTO")
     private Produto produto;
+
+    @Column(name = "DESTAQUE", nullable = false)
+    private Boolean destaque;
 
 }

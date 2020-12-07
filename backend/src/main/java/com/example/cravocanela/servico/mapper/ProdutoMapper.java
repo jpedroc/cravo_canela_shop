@@ -11,6 +11,6 @@ public interface ProdutoMapper extends EntityMapper<ProdutoDTO, Produto> {
     @Override
     @Mapping(target = "nome", source = "nomeProduto")
     @Mapping(target = "valor", source = "valorProduto")
-    @Mapping(target = "imagemDestaque", source = "imagemDestaque")
+    @Mapping(target = "imagemDestaque", expression = "java(entity.getListaImagens().get(0))")
     ProdutoDTO toDto(Produto entity);
 }

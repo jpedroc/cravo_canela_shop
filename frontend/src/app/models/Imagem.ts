@@ -1,6 +1,4 @@
-export class Imagem {
-    id: number;
-    imagem: File
-    idProduto: number;
+import { ImagemCadastro } from './ImagemCadastros';
+export class Imagem extends ImagemCadastro{
     url: string;
 }

@@ -6,6 +6,5 @@ export class ProdutoCadastro {
     valorProduto: number;
     quantidadeEstoque: number;
     status: boolean = true;
-    imagemDestaque: Imagem;
     listaImagem: Imagem[] = [];
 }

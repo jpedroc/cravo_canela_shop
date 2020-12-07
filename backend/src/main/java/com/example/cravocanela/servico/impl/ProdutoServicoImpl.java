@@ -35,11 +35,6 @@ public class ProdutoServicoImpl implements ProdutoServico {
 
     @Override
     public Produto salvar(Produto produto) {
-        if(produto.getListaImagens().isEmpty()){
-            throw new RegraNegocioException("Lista de imagens vazias");
-        }
-
-
         return produtoRepositorio.save(produto);
     }
 
