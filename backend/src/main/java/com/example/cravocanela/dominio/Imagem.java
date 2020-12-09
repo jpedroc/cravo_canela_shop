@@ -1,6 +1,7 @@
 package com.example.cravocanela.dominio;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -26,6 +27,7 @@ public class Imagem {
     private byte[] imagem;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "ID_PRODUTO")
     private Produto produto;
 

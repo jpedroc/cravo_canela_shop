@@ -1,6 +1,6 @@
+import { Resource } from './Resource.model';
 import { Imagem } from './Imagem';
-export class ProdutoCadastro {
-    id: number;
+export class ProdutoCadastro extends Resource{
     nomeProduto: string;
     descricaoProduto: string;
     valorProduto: number;

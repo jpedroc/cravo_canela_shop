@@ -1,4 +1,3 @@
-import { ProdutoServiceService } from './services/produto-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,11 +7,13 @@ import { ProdutoFormComponent } from './pages/produto/produto-form/produto-form.
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProdutoListComponent } from './pages/produto/produto-list/produto-list.component';
 
 @NgModule({
   declarations: [
     ProdutoFormComponent,
-    AppComponent
+    AppComponent,
+    ProdutoListComponent
   ],
   imports: [
     BrowserModule,

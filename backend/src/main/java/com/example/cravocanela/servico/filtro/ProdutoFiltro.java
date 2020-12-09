@@ -1,9 +1,10 @@
 package com.example.cravocanela.servico.filtro;
 
-import com.example.cravocanela.dominio.Produto;
+import com.example.cravocanela.dominio.Produto_;
+import liquibase.util.StringUtils;
 import lombok.Getter;
 import lombok.Setter;
-
+import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.data.jpa.domain.Specification;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -28,18 +29,18 @@ public class ProdutoFiltro implements EntityFiltro {
 
     private List<Predicate> getPredicates(Root root, CriteriaBuilder builder) {
         List<Predicate> predicates = new ArrayList<>();
-//        if(ObjectUtils.isNotEmpty(id)) {
-//            Predicate predicate = builder.equal(root.get(Produto_.id), id);
-//            predicates.add(predicate);
-//        }
-//        if(StringUtils.isNotEmpty(nome)) {
-//            Predicate predicate = builder.like(root.get(Produto_.nomeProduto), "%" + nome.toLowerCase() + "%");
-//            predicates.add(predicate);
-//        }
-//        if(ObjectUtils.isNotEmpty(valor)) {
-//            Predicate predicate = builder.equal(root.get(Produto_.valorProduto), valor);
-//            predicates.add(predicate);
-//        }
+        if(ObjectUtils.isNotEmpty(id)) {
+            Predicate predicate = builder.equal(root.get(Produto_.id), id);
+            predicates.add(predicate);
+        }
+        if(StringUtils.isNotEmpty(nome)) {
+            Predicate predicate = builder.like(root.get(Produto_.nomeProduto), "%" + nome.toLowerCase() + "%");
+            predicates.add(predicate);
+        }
+        if(ObjectUtils.isNotEmpty(valor)) {
+            Predicate predicate = builder.equal(root.get(Produto_.valorProduto), valor);
+            predicates.add(predicate);
+        }
         return predicates;
     }
 }

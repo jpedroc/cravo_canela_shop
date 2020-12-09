@@ -1,0 +1,11 @@
+<div>
+
+    <li *ngFor="let produto of produtos.content">
+        <div>
+            <span>{{produto.nome}}</span>
+            <img [src]="setImagem(produto.imagemDestaque)" height="200">
+            <span>{{produto.valor}}</span>
+        </div>
+    </li>
+
+</div>

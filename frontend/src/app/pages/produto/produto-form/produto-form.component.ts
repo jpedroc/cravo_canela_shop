@@ -1,9 +1,8 @@
-import { element } from 'protractor';
-import { ImagemServiceService } from './../../../services/imagem-service.service';
-import { ProdutoServiceService } from './../../../services/produto-service.service';
-import { Imagem } from './../../../models/Imagem';
-import { ProdutoCadastro } from './../../../models/ProdutoCadastro';
 import { Component, OnInit } from '@angular/core';
+import { ProdutoCadastroService } from 'src/app/services/produto-cadastro.service';
+import { ImagemServiceService } from 'src/app/services/imagem-service.service';
+import { ProdutoCadastro } from 'src/app/models/ProdutoCadastro';
+import { Imagem } from 'src/app/models/Imagem';
 
 @Component({
   selector: 'app-produto-form',
@@ -18,7 +17,7 @@ export class ProdutoFormComponent implements OnInit {
 
 
   constructor( 
-    private produtoService: ProdutoServiceService,
+    private produtoService: ProdutoCadastroService,
     private imagemService: ImagemServiceService
     ) { }
 
@@ -60,9 +59,7 @@ export class ProdutoFormComponent implements OnInit {
 
     this.produtoService.create(this.produto).subscribe(
       response => {
-        this.formData.append('idProduto', response.id);
-        console.log(this.formData);
-        console.log(response);
+        this.formData.append('idProduto', response.id.toString());
         this.imagemService.createImagem(this.formData).subscribe(
           response => {
             console.log("Cadastrou");
