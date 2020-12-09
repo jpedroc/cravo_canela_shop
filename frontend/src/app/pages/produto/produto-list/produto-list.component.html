@@ -5,6 +5,7 @@
             <span>{{produto.nome}}</span>
             <img [src]="setImagem(produto.imagemDestaque)" height="200">
             <span>{{produto.valor}}</span>
+            <button (click)="verProduto(produto.id)">Visualizar</button>
         </div>
     </li>
 

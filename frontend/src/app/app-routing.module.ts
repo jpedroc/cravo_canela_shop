@@ -2,10 +2,13 @@ import { ProdutoFormComponent } from './pages/produto/produto-form/produto-form.
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProdutoListComponent } from './pages/produto/produto-list/produto-list.component';
+import { ProdutoDetalhesComponent } from './pages/produto/produto-detalhes/produto-detalhes.component';
+import { ProdutoResolver } from './pages/produto/produto-detalhes/produto-resolver';
 
 const routes: Routes = [
   {path: "", component: ProdutoFormComponent},
-  {path: "listagem", component: ProdutoListComponent}
+  {path: "listagem", component: ProdutoListComponent},
+  {path: "detalhe/:id", component: ProdutoDetalhesComponent, resolve: {ProdutoResolve: ProdutoResolver}},
 ];
 
 @NgModule({

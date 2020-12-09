@@ -38,4 +38,10 @@ public class ProdutoRecurso {
         Page<ProdutoDTO> produtos = produtoServico.listar(produtoFiltro, pageable);
         return ResponseEntity.ok().body(produtos);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Produto> obterPorId(@PathVariable("id") Long id) {
+        Produto produto = produtoServico.obterPorId(id);
+        return ResponseEntity.ok().body(produto);
+    }
 }

@@ -6,5 +6,5 @@ export class ProdutoCadastro extends Resource{
     valorProduto: number;
     quantidadeEstoque: number;
     status: boolean = true;
-    listaImagem: Imagem[] = [];
+    listaImagens: Imagem[] = [];
 }

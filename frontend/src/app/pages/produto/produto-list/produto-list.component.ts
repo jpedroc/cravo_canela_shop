@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ImagemCadastro } from 'src/app/models/ImagemCadastros';
-import { ProdutoCadastro } from 'src/app/models/ProdutoCadastro';
 import { ProdutoFiltro } from 'src/app/models/ProdutoFiltro';
 import { ProdutoListagem } from 'src/app/models/ProdutoListagem';
 import { ProdutoListagemService } from 'src/app/services/produto-listagem.service';
@@ -18,7 +18,8 @@ export class ProdutoListComponent implements OnInit {
   filtro: ProdutoFiltro = new ProdutoFiltro();
 
   constructor(
-    private produtoService: ProdutoListagemService
+    private produtoService: ProdutoListagemService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -40,6 +41,10 @@ export class ProdutoListComponent implements OnInit {
 
   setImagem(imagem: ImagemCadastro) {
     return "data:image/png;base64," + imagem.imagem;
+  }
+
+  verProduto(id: number) {
+    this.router.navigate([`detalhe/${id}`]);
   }
 
 }
