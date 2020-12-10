@@ -17,7 +17,7 @@
 <div>
     <span>Imagens</span>
     <button (click)="novaImagem()">Adicionar Imagem</button>
-    <li *ngFor="let img of produto.listaImagem; index as index">
+    <li *ngFor="let img of produto.listaImagens; index as index">
         <input type="file" accept="image/png, image/jpeg" (change)="setImagem($event, index)">
         <img [src]="img.url" height="200">
     </li>

@@ -26,8 +26,8 @@ export class ProdutoFormComponent implements OnInit {
   }
 
   novaImagem() {
-    console.log(this.produto.listaImagem.length)
-    this.produto.listaImagem.push(new Imagem());
+    console.log(this.produto.listaImagens.length)
+    this.produto.listaImagens.push(new Imagem());
   }
 
   setImagem(event: any, index: number) {
@@ -36,13 +36,13 @@ export class ProdutoFormComponent implements OnInit {
 
       reader.readAsDataURL(event.target.files[0]);
       reader.onload = (event) => {
-        this.produto.listaImagem[index].url = event.target.result.toString();
+        this.produto.listaImagens[index].url = event.target.result.toString();
       }
 
-      this.produto.listaImagem[index].imagem = event.target.files.item(0);
+      this.produto.listaImagens[index].imagem = event.target.files.item(0);
 
       if(index == 0) {
-        this.produto.listaImagem[index].destaque = true;
+        this.produto.listaImagens[index].destaque = true;
       }
     }
   }
@@ -50,11 +50,11 @@ export class ProdutoFormComponent implements OnInit {
   salvar() {
     this.formData = new FormData();
 
-    this.produto.listaImagem.map(element => {
+    this.produto.listaImagens.map(element => {
       this.formData.append("imagens", element.imagem);
     })
 
-    this.produto.listaImagem = [];
+    this.produto.listaImagens = [];
     console.log(this.produto)
 
     this.produtoService.create(this.produto).subscribe(

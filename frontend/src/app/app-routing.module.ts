@@ -4,11 +4,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProdutoListComponent } from './pages/produto/produto-list/produto-list.component';
 import { ProdutoDetalhesComponent } from './pages/produto/produto-detalhes/produto-detalhes.component';
 import { ProdutoResolver } from './pages/produto/produto-detalhes/produto-resolver';
+import { LayoutComponent } from './components/layout/layout.component';
 
 const routes: Routes = [
-  {path: "", component: ProdutoFormComponent},
-  {path: "listagem", component: ProdutoListComponent},
-  {path: "detalhe/:id", component: ProdutoDetalhesComponent, resolve: {ProdutoResolve: ProdutoResolver}},
+  { path: "",
+    component: LayoutComponent,
+    children: [
+      {path: "cadastro", component: ProdutoFormComponent},
+      {path: "listagem", component: ProdutoListComponent},
+      {path: "detalhe/:id", component: ProdutoDetalhesComponent, resolve: {ProdutoResolve: ProdutoResolver}},
+    ]
+  }
 ];
 
 @NgModule({

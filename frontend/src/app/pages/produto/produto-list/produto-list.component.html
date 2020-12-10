@@ -1,12 +1,8 @@
-<div>
-
-    <li *ngFor="let produto of produtos.content">
-        <div>
-            <span>{{produto.nome}}</span>
-            <img [src]="setImagem(produto.imagemDestaque)" height="200">
-            <span>{{produto.valor}}</span>
-            <button (click)="verProduto(produto.id)">Visualizar</button>
-        </div>
-    </li>
-
+<div class="cards-group" *ngFor="let produto of produtos.content">
+    <div class="card">
+        <h3>{{produto.nome}}</h3>
+        <img [src]="setImagem(produto.imagemDestaque)">
+        <span>R$ {{produto.valor}}</span>
+        <button (click)="verProduto(produto.id)">Visualizar</button>
+    </div>
 </div>

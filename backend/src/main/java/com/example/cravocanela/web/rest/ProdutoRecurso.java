@@ -26,7 +26,6 @@ public class ProdutoRecurso {
         return ResponseEntity.created(new URI("/produtos/" + produtoSalvo.getId())).body(produtoSalvo);
     }
 
-
     @PutMapping
     public ResponseEntity<Produto> editar(@Valid @RequestBody Produto produto) {
         Produto produtoEditado = produtoServico.salvar(produto);
