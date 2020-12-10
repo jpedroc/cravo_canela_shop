@@ -3,4 +3,6 @@ export class ProdutoFiltro extends Resource{
     nome: string;
     valor: number;
     status: boolean;
+    marca: string;
+    tamanho: string;
 }

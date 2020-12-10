@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     height: 100vh;
-    background-color: #e6d2ad;
+    background-color: #fff;
     margin: 0px;
     display: grid;
     grid-template-rows: 120px 1fr 60px;
@@ -49,7 +49,35 @@ body {
     color: #444;
 }
 
+.container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas: 
+        "filtro"
+        "conteudo";
+}
+
+.filtros {
+    margin-left: 2rem;
+    padding-left: 2rem;
+    box-shadow: 0px 4px 9px -2px rgba(0, 0, 0, 0.75);
+    background-color: #d3d3d3;
+    position: static;
+    width: 80%;
+    grid-area: filtro;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.filtros > h3 {
+    margin-bottom: 0px;
+}
+
 .cards-group {
+    grid-area: conteudo;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -57,6 +85,8 @@ body {
 
 .card {
     display: flex;
+    background-color: #f3e7d0c7;
+    margin: 10px;
     flex-direction: column;
     flex-basis: 20% !important;
     margin-bottom: 20px;
@@ -87,18 +117,38 @@ body {
 
 .card > span {
     padding: 5px;
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 .card > button {
-    width: 30%;
+    width: min-content;
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 15px 15px;
+    padding: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px; 
     border-radius: 4px;
+}
+
+.barra-pesquisa {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.barra-pesquisa > span > img {
+    padding: 12px 3px;
+    margin: 8px 0;
+    height: 1.5rem;
+}
+
+.barra-pesquisa > input[type=text] {
+    width: 80%;
+    font-size: 1.5rem;
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }

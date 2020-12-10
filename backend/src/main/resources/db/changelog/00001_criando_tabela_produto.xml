@@ -20,6 +20,12 @@
             <column name="QUANTIDADE_ESTOQUE" type="bigint" remarks="Quantidade do produto em estoque">
                 <constraints nullable="false"/>
             </column>
+            <column name="TAMANHO" type="varchar(3)" remarks="Tamanho da roupa">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MARCA" type="varchar(30)" remarks="Nome da marca da roupa">
+                <constraints nullable="true"/>
+            </column>
             <column name="STATUS" type="boolean" remarks="Informa se o produto está ativo ou não">
                 <constraints nullable="false"/>
             </column>

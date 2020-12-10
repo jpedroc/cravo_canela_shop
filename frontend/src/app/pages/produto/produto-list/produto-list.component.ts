@@ -47,4 +47,8 @@ export class ProdutoListComponent implements OnInit {
     this.router.navigate([`detalhe/${id}`]);
   }
 
+  montarTitulo(produto: ProdutoListagem) {
+    return `${produto.nome} - ${produto.tamanho}` + (produto.marca ? ` - ${produto.marca}` : '');
+  }
+
 }

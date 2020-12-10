@@ -21,6 +21,8 @@ public class ProdutoFiltro implements EntityFiltro {
     private String nome;
     private Double valor;
     private Boolean status;
+    private String tamanho;
+    private String marca;
 
     @Override
     public Specification filter() {
@@ -35,6 +37,14 @@ public class ProdutoFiltro implements EntityFiltro {
         }
         if(StringUtils.isNotEmpty(nome)) {
             Predicate predicate = builder.like(root.get(Produto_.nomeProduto), "%" + nome.toLowerCase() + "%");
+            predicates.add(predicate);
+        }
+        if(StringUtils.isNotEmpty(marca)) {
+            Predicate predicate = builder.like(root.get(Produto_.marca), "%" + marca.toLowerCase() + "%");
+            predicates.add(predicate);
+        }
+        if(StringUtils.isNotEmpty(tamanho)) {
+            Predicate predicate = builder.like(root.get(Produto_.tamanho), "%" + tamanho.toLowerCase() + "%");
             predicates.add(predicate);
         }
         if(ObjectUtils.isNotEmpty(valor)) {

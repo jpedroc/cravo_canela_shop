@@ -14,5 +14,7 @@ public class ProdutoDTO {
     private Long id;
     private String nome;
     private Double valor;
+    private String tamanho;
+    private String marca;
     private Imagem imagemDestaque;
 }

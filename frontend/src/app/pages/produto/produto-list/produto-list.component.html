@@ -1,8 +1,47 @@
-<div class="cards-group" *ngFor="let produto of produtos.content">
-    <div class="card">
-        <h3>{{produto.nome}}</h3>
-        <img [src]="setImagem(produto.imagemDestaque)">
-        <span>R$ {{produto.valor}}</span>
-        <button (click)="verProduto(produto.id)">Visualizar</button>
+<div class="container">
+    <div class="filtros">
+        <h3>Filtros</h3>
+        <div class="filtro-tamanho">
+            <h4>Tamanho</h4>
+            <ul>
+                <li>P</li>
+                <li>M</li>
+                <li>G</li>
+                <li>GG</li>
+            </ul>
+        </div>
+        <div class="filtro-marca">
+            <h4>Tamanho</h4>
+            <ul>
+                <li>P</li>
+                <li>M</li>
+                <li>G</li>
+                <li>GG</li>
+            </ul>
+        </div>
+        <div class="filtro-valor">
+            <h4>Tamanho</h4>
+            <ul>
+                <li>P</li>
+                <li>M</li>
+                <li>G</li>
+                <li>GG</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="conteudo">
+        <div class="barra-pesquisa">
+            <span><img src="../../../../assets/search.png"></span>
+            <input type="text" placeholder="Pesquisar">
+        </div>
+        <div class="cards-group" >
+            <div class="card" *ngFor="let produto of produtos.content">
+                <h3>{{montarTitulo(produto)}}</h3>
+                <img [src]="setImagem(produto.imagemDestaque)">
+                <span>R$ {{produto.valor}}</span>
+                <button (click)="verProduto(produto.id)">Visualizar</button>
+            </div>
+        </div>
     </div>
 </div>

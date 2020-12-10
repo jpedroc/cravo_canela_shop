@@ -15,6 +15,14 @@
     <input type="number" [(ngModel)]="produto.quantidadeEstoque">
 </div>
 <div>
+    <span>Tamanho</span>
+    <input type="text" [(ngModel)]="produto.tamanho">
+</div>
+<div>
+    <span>Marca</span>
+    <input type="text" [(ngModel)]="produto.marca">
+</div>
+<div>
     <span>Imagens</span>
     <button (click)="novaImagem()">Adicionar Imagem</button>
     <li *ngFor="let img of produto.listaImagens; index as index">

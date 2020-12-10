@@ -23,6 +23,12 @@ public class Produto {
     @Column(name = "DESCRICAO", nullable = false)
     private String descricaoProduto;
 
+    @Column(name = "TAMANHO", nullable = false)
+    private String tamanho;
+
+    @Column(name = "MARCA")
+    private String marca;
+
     @Column(name = "VALOR", nullable = false)
     private Double valorProduto;
 
