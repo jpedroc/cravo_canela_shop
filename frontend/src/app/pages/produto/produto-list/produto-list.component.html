@@ -1,40 +1,32 @@
 <div class="container">
     <div class="filtros">
         <h3>Filtros</h3>
+        <input class="barra-pesquisa" type="text" [(ngModel)]="filtro.nome" placeholder="Pesquisar">
         <div class="filtro-tamanho">
             <h4>Tamanho</h4>
-            <ul>
-                <li>P</li>
-                <li>M</li>
-                <li>G</li>
-                <li>GG</li>
+            <ul *ngFor="let tamanho of enumTamanho">
+                <li>{{tamanho}}</li>
             </ul>
         </div>
         <div class="filtro-marca">
-            <h4>Tamanho</h4>
+            <h4>Marca</h4>
             <ul>
-                <li>P</li>
-                <li>M</li>
-                <li>G</li>
-                <li>GG</li>
+                <li>Nike</li>
+                <li>UOT</li>
+                <li>Cobra D'agua</li>
+                <li>Desconhecido</li>
             </ul>
         </div>
         <div class="filtro-valor">
-            <h4>Tamanho</h4>
-            <ul>
-                <li>P</li>
-                <li>M</li>
-                <li>G</li>
-                <li>GG</li>
-            </ul>
+            <h4>Valor</h4>
+            <span>R$ {{filtro.valor}}</span>
+            <input type="range" min="0" max="{{maxValue}}" step="1" name="filtroValor" [(ngModel)]="filtro.valor" id="filtroValor">
+            <small> Limite o valor do produto</small>
         </div>
+        <button>Filtrar</button>
     </div>
-    
     <div class="conteudo">
-        <div class="barra-pesquisa">
-            <span><img src="../../../../assets/search.png"></span>
-            <input type="text" placeholder="Pesquisar">
-        </div>
+        <button class="btn-filtro">Filtrar</button>
         <div class="cards-group" >
             <div class="card" *ngFor="let produto of produtos.content">
                 <h3>{{montarTitulo(produto)}}</h3>

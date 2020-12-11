@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EnumTamanho } from 'src/app/models/EnumTamanho';
 import { ImagemCadastro } from 'src/app/models/ImagemCadastros';
 import { ProdutoFiltro } from 'src/app/models/ProdutoFiltro';
 import { ProdutoListagem } from 'src/app/models/ProdutoListagem';
@@ -15,7 +16,10 @@ export class ProdutoListComponent implements OnInit {
 
   produtos: Pageable<ProdutoListagem>;
   itensPorPagina: number;
+  enumTamanho = Object.values(EnumTamanho);
   filtro: ProdutoFiltro = new ProdutoFiltro();
+  maxValue = 200;
+  filtroValor = 20.00;
 
   constructor(
     private produtoService: ProdutoListagemService,
